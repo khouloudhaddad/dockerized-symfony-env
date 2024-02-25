@@ -9,3 +9,4 @@
 ## Install Symfony Skeleton
 
 - Run `docker-compose exec php composer create-project symfony/skeleton:"5.*"`
+- Run `docker-compose exec php composer require symfony/orm-pack`
