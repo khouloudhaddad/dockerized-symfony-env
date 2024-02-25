@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  ngnix:
+  nginx:
     image: nginx:latest
     ports:
       - "80:80"
@@ -16,13 +16,13 @@ services:
       PHP_IDE_CONFIG: "serverName=shop"
     volumes:
       - ./:/app
-      - ./xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdbug.ini
+      - ./xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
   db:
     image: postgres:13.3
     environment:
       POSTGRES_DB: "shop"
-      POSTGRES_USER: "khouloud"
+      POSTGRES_USER: "tanya"
       POSTGRES_PASSWORD: "123"
     ports:
       - "5432:5432"
