@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Repository\ProductRepository;
+use App\Service\ProductService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,10 +13,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductController extends AbstractController
 {
     private ProductRepository $productRepository;
+    private ProductService $productService;
 
-    public function __construct(ProductRepository $productRepository)
+    public function __construct(ProductRepository $productRepository, ProductService $productService)
     {
         $this->productRepository = $productRepository;
+        $this->productService = $productService;
     }
 
     /**
@@ -25,14 +28,9 @@ class ProductController extends AbstractController
     {
         $request = Request::createFromGlobals();
         $productInfo = $request->toArray();
-        $product = new Product();
 
-        $product->setName($productInfo["name"]);
-        $product->setDescription($productInfo["description"]);
-        $product->setAmount($productInfo["amount"]);
-        $product->setPrice($productInfo["price"]);
-        $this->productRepository->save($product);
+        $product = $this->productService->addProduct($productInfo);
 
-        return $this->json("New product successfully created ".$product->getId());
+        return $this->json("New product successfully created #".$product->getId());
     }
 }
