@@ -22,7 +22,7 @@ services:
     image: postgres:13.3
     environment:
       POSTGRES_DB: "shop"
-      POSTGRES_USER: "tanya"
+      POSTGRES_USER: "khouloud"
       POSTGRES_PASSWORD: "123"
     ports:
       - "5432:5432"
