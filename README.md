@@ -15,3 +15,7 @@
 ## Create Postgres DB and entities
 
 - Run `docker-compose exec php bin/console doctrine:schema:update --force`
+
+## PHPUnit
+- Run `docker-compose exec php composer require phpunit/phpunit`
+- Run `docker-compose exec php composer require --dev symfony/phpunit-bridge`
