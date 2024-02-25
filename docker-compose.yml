@@ -21,8 +21,8 @@ services:
   db:
     image: postgres:13.3
     environment:
-      POSTGRES_DB: "shop"
-      POSTGRES_USER: "khouloud"
-      POSTGRES_PASSWORD: "123"
+      POSTGRES_DB: shop
+      POSTGRES_USER: khouloud
+      POSTGRES_PASSWORD: root123
     ports:
       - "5432:5432"

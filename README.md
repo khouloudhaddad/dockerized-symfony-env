@@ -10,3 +10,8 @@
 
 - Run `docker-compose exec php composer create-project symfony/skeleton:"5.*"`
 - Run `docker-compose exec php composer require symfony/orm-pack`
+- Run `docker-compose exec php composer require symfony/orm-pack`, choose "No" then update DATABASE_URL in .env file
+
+## Create Postgres DB and entities
+
+- Run `docker-compose exec php bin/console doctrine:schema:update --force`
