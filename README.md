@@ -19,3 +19,5 @@
 ## PHPUnit
 - Run `docker-compose exec php composer require phpunit/phpunit`
 - Run `docker-compose exec php composer require --dev symfony/phpunit-bridge`
+- Create test DB through `docker-compose exec php bin/console doctrine:database:create --env=test`
+- Run `docker-compose exec php bin/console doctrine:schema:update --force --env=test`

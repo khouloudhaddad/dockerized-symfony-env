@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class ProductTest extends KernelTestCase
 {
-    public function textProductCreation(){
+    public function testProduct(){
         static::bootKernel();
         $container = static::getContainer();
 
